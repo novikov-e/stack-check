@@ -44,3 +44,6 @@ setting.gradle
 #Maven
 target
 classes
+
+.angular
+node_modules

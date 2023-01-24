@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:15.1'
+    container_name: 'stack-check-database'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: task_manager
+
+  backend:
+    build: ./modules/backend
+    container_name: 'stack-check-backend'
+    ports:
+      - 8080:8080
+
+  frontend:
+    build: ./modules/frontend
+    container_name: 'stack-check-frontend'
+    ports:
+      - 4200:4200
